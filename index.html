@@ -1,0 +1,38 @@
+<!-- https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Converter</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <textarea  
+        id="input"
+        type="text"
+        placeholder="Convert to pdf"
+    ></textarea>
+
+    <button onclick="generatePDF()">
+        Convert to PDF
+    </button>
+
+
+    <script>
+        // js code
+        function generatePDF(){
+            var pdf = new jsPDF();
+            var input = document.getElementById('input').value;
+            pdf.text(input,20, 30);
+            pdf.addPage();
+            pdf.text('Second page', 20,30);
+            pdf.save('Abhishek');
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+</body>
+</html>
